@@ -1,0 +1,14 @@
+{
+    "version": 1,
+    "revision": 0,
+    "rules": [
+        {
+            "primary-output": "DataAccess.dir\\Debug\\dbaccess.obj",
+            "outputs": [
+                "DataAccess.dir\\Debug\\dbaccess.cpp.ifc.dt.module.json",
+                "DataAccess.dir\\Debug\\dbaccess.cpp.ifc.dt.d.json"
+            ],
+            "requires": []
+        }
+    ]
+}

@@ -1,0 +1,13 @@
+﻿  Building Custom Rule D:/Users/John/Source/Repos/AAT.Abby.Win64/src/abby/data_access/CMakeLists.txt
+  CMake is re-running because D:/Users/John/Source/Repos/AAT.Abby.Win64/build/src/abby/data_access/CMakeFiles/generate.stamp is out-of-date.
+    the file 'D:/Users/John/Source/Repos/AAT.Abby.Win64/src/abby/data_access/CMakeLists.txt'
+    is newer than 'D:/Users/John/Source/Repos/AAT.Abby.Win64/build/src/abby/data_access/CMakeFiles/generate.stamp.depend'
+    result='-1'
+  -- Selecting Windows SDK version 10.0.26100.0 to target Windows 10.0.26200.
+  -- Using Python: C:/Users/John/AppData/Local/Programs/Python/Python313/python.exe
+  CMake Error at src/abby/CMakeLists.txt:93:
+    Parse error.  Expected a command name, got unquoted argument with text "-".
+  
+  -- Configuring incomplete, errors occurred!
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppCommon.targets(254,5): error MSB8066: Custom build for 'D:\Users\John\Source\Repos\AAT.Abby.Win64\src\abby\data_access\CMakeLists.txt' exited with code 1.

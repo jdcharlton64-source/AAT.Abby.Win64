@@ -1,0 +1,10 @@
+^D:\USERS\JOHN\SOURCE\REPOS\AAT.ABBY.WIN64\SRC\ABBY\DATA_ACCESS\CMAKELISTS.TXT
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SD:/Users/John/Source/Repos/AAT.Abby.Win64 -BD:/Users/John/Source/Repos/AAT.Abby.Win64/build --check-stamp-file D:/Users/John/Source/Repos/AAT.Abby.Win64/build/src/abby/data_access/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
