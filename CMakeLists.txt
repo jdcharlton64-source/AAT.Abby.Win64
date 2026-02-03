@@ -16,15 +16,6 @@ project(cef)
 # Use folders in the resulting project files.
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 
-# Ensure a consistent MSVC runtime for all targets (use dynamic CRT).
-if(MSVC)
-  # Use dynamic CRT: MultiThreadedDLL for Release, MultiThreadedDebugDLL for Debug (/MD /MDd)
-  set(_desired_runtime "MultiThreaded$<$<CONFIG:Debug>:Debug>DLL")
-
-  # Apply as default for any new targets created after this point.
-  set(CMAKE_MSVC_RUNTIME_LIBRARY "${_desired_runtime}")
-endif()
-
 #
 # CEF configuration.
 #
@@ -166,24 +157,6 @@ option(WITH_EXAMPLES "Enable or disable building of src." ON)
 if(WITH_EXAMPLES)
   # Include example application targets.
   add_subdirectory(src)
-endif()
-
-# TODO: Include other application targets here.
-
-# Enforce MSVC runtime library target property after targets exist.
-if(MSVC)
-  # Only set for actual targets (not INTERFACE libraries).
-  get_property(_allTargets GLOBAL PROPERTY TARGETS)
-  foreach(_t IN LISTS _allTargets)
-    if(TARGET "${_t}")
-      get_target_property(_type "${_t}" TYPE)
-      if(NOT _type STREQUAL "INTERFACE_LIBRARY")
-        set_target_properties("${_t}" PROPERTIES
-          MSVC_RUNTIME_LIBRARY "${_desired_runtime}"
-        )
-      endif()
-    endif()
-  endforeach()
 endif()
 
 # Display configuration settings.
