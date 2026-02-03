@@ -7,11 +7,8 @@
 
 project(DataAccess VERSION 1.0.0)
 
-
-set(ThirdPartyLibs D:\\ThirdParty)
-
 # nlohmann json
-set(NLohmannIncludePath ${ThirdPartyLibs}\\json\\single_include)
+set(NLohmannIncludePath ${CMAKE_CURRENT_LIST_DIR}\\third_party\\json\\single_include)
 include_directories(${NLohmannIncludePath})
 
 add_subdirectory(${CMAKE_CURRENT_LIST_DIR}\\third_party\\SQLiteCpp)
@@ -22,12 +19,6 @@ add_library(${PROJECT_NAME} STATIC "dbaccess.cpp")
 
 if (CMAKE_VERSION VERSION_GREATER 3.12)
   set_property(TARGET ${PROJECT_NAME} PROPERTY CXX_STANDARD 20)
-endif()
-
-if(MSVC)
-  set_target_properties(${PROJECT_NAME} PROPERTIES
-    MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>DLL"
-  )
 endif()
 
 # link SQLiteCpp and SQLite3

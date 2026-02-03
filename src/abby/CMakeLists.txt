@@ -76,8 +76,8 @@ set(DataAccessFolder ${CMAKE_CURRENT_SOURCE_DIR}\\data_access)
 # data access include
 include_directories(${DataAccessFolder})
 
-# nlohmann json include
-set(NLohmannIncludePath D:\\ThirdParty\\json\\single_include)
+# nlohmann json
+set(NLohmannIncludePath ${DataAccessFolder}\\third_party\\json\\single_include)
 include_directories(${NLohmannIncludePath})
 
 #
