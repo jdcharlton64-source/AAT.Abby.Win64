@@ -123,7 +123,7 @@ void Client::OnAfterCreated(CefRefPtr<CefBrowser> browser) {
 
   browser_ct_++;
 
-  std::string result = DataAccess::getKiosk();
+  //std::string result = DataAccess::getKiosk();
   //json j = json::parse(result);
   //Kiosk kiosk = j.get<Kiosk>();
 
